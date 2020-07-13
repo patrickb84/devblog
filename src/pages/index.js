@@ -1,45 +1,34 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import AllPosts from "../components/all-posts"
+import VideoHeader from "../components/video-header"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <Bio />
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <article key={node.fields.slug}>
-            <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
-        )
-      })}
+      <SEO title="Fluffy bunnies like crazy" />
+
+      <VideoHeader />
+
+      <div className="bg-light py-5 text-center">
+        <div className="my-5 mx-auto" style={{maxWidth: 800}}>
+          <h2 className="h1 font-peacock">Every hobby farm has a story</h2>
+          <p className="lead">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+            est repudiandae doloribus, cumque expedita eum ipsa? Molestiae omnis
+            sed animi!
+          </p>
+        </div>
+      </div>
+
+      <div className="bg-light py-5 border-top border-bottom">
+        <AllPosts />
+      </div>
     </Layout>
   )
 }
@@ -51,21 +40,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
-        }
       }
     }
   }
