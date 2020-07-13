@@ -1,12 +1,8 @@
 ---
-title: Patrick Bradshaw checking in, what's the status, over.
+title: Theatrical Snickers
 date: 2020-06-24T07:35:48.588Z
-description: What the status is.
+description: When the lights hit the ceiling
 ---
-# Me saying what the status is
+# Header
 
-And the status was like this a little something like this.
-
-## The status was that
-
-Still something like still something like this.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus pulvinar elementum integer enim neque. Velit dignissim sodales ut eu. Pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit. Lobortis mattis aliquam faucibus purus in. Vel turpis nunc eget lorem dolor sed viverra ipsum. Quam id leo in vitae turpis massa. Sit amet massa vitae tortor condimentum lacinia.
