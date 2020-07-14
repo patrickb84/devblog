@@ -125,7 +125,7 @@ $enable-hover-media-query:                    false !default; // Deprecated, no 
 $enable-grid-classes:                         true !default;
 $enable-pointer-cursor-for-buttons:           true !default;
 $enable-print-styles:                         true !default;
-$enable-responsive-font-sizes:                false !default;
+$enable-responsive-font-sizes:                true !default;
 $enable-validation-icons:                     true !default;
 $enable-deprecation-messages:                 true !default;
 
@@ -216,8 +216,10 @@ $grid-breakpoints: (
 $container-max-widths: (
   sm: 540px,
   md: 720px,
-  lg: 960px,
-  xl: 1140px
+  // lg: 960px,
+  // xl: 1140px
+  lg: 1080px,
+  xl: 1300px
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -296,7 +298,7 @@ $font-weight-bold:            700 !default;
 $font-weight-bolder:          bolder !default;
 
 $font-weight-base:            $font-weight-normal !default;
-$line-height-base:            1.5 !default;
+$line-height-base:            1.7 !default;
 
 $h1-font-size:                $font-size-base * 2.5 !default;
 $h2-font-size:                $font-size-base * 2 !default;

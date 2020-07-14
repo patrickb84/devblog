@@ -9,7 +9,7 @@ const AllPosts = () => {
       render={data => (
         <>
           {data.allMarkdownRemark.edges.map(({ node }) => (
-            <PostSnippet node={node} key={node.frontmatter.date} />
+            <PostSnippet node={node} key={node.frontmatter.title} />
           ))}
         </>
       )}
@@ -32,6 +32,13 @@ export const componentQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            featuredimage {
+              childImageSharp {
+                fluid(maxWidth: 640) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

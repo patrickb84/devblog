@@ -1,8 +1,18 @@
 @import "./responsive.scss";
 @import "./bootstrap/scss/bootstrap.scss";
+@import "./animate.css/animate.min.css";
 
 // Adobe fonts
 @import url("https://use.typekit.net/pcy8rsm.css");
+
+.mw-800 {
+  max-width: 800px;
+}
+
+html,
+body {
+  font-size: 18px;
+}
 
 .font-peacock {
   font-family: jaf-peacock, sans-serif;

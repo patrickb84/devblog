@@ -11,9 +11,9 @@ const VideoHeader = () => {
 
       <header className="viewport-header">
 
-        <h1 className="w-100 display-1 text-white font-peacock my-2 my-md-5 px-2">
+        <h1 className="w-100 display-3 text-white font-peacock my-2 my-md-5 px-2">
           Welcome to a{" "}
-          <em className="font-peacock-loop underline-wavy">lively</em> place...
+          <em className="font-peacock-loop underline-wavy">lively</em> place
         </h1>
       </header>
     </div>

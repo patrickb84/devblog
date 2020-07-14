@@ -3,8 +3,13 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import AllPosts from "../components/all-posts"
+// import AllPosts from "../components/all-posts"
 import VideoHeader from "../components/video-header"
+// import SubNav from "../components/sub-nav"
+import HomeAbout from "../components/home-about"
+import HomeProducts from "../components/home-products"
+import EmailSignUp from "../components/email-signup"
+import InstagramBlock from "../components/instagram-block"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -14,21 +19,33 @@ const BlogIndex = ({ data, location }) => {
       <SEO title="Fluffy bunnies like crazy" />
 
       <VideoHeader />
-
-      <div className="bg-light py-5 text-center">
-        <div className="my-5 mx-auto" style={{maxWidth: 800}}>
-          <h2 className="h1 font-peacock">Every hobby farm has a story</h2>
-          <p className="lead">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            est repudiandae doloribus, cumque expedita eum ipsa? Molestiae omnis
-            sed animi!
-          </p>
+      <HomeAbout />
+      <div className="row no-gutters">
+        <div className="col-md-6">
+          <div
+            className="bg-dark text-white d-flex align-items-center justify-content-center"
+            style={{ height: 500 }}
+          >
+            <h2 className="h1 font-peacock-loop">Meet the animals</h2>
+          </div>
+        </div>
+        <div className="col-md-6">
+          <div
+            className="bg-secondary text-white d-flex align-items-center justify-content-center"
+            style={{ height: 500 }}
+          >
+            <h2 className="h1 font-peacock-loop">Our Story</h2>
+          </div>
         </div>
       </div>
+      <HomeProducts />
 
-      <div className="bg-light py-5 border-top border-bottom">
+      {/* <section className="d-none">
         <AllPosts />
-      </div>
+      </section> */}
+
+      <EmailSignUp />
+      <InstagramBlock />
     </Layout>
   )
 }

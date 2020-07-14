@@ -1,13 +1,14 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Img from "gatsby-image/withIEPolyfill"
+import "./blog-post.scss"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata.title
+  const siteTitle = <data className="site siteMetadata title"></data>
   const { previous, next } = pageContext
 
   return (
@@ -18,27 +19,15 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       />
       <article>
         <header>
-          <h1
-            style={{
-              marginBottom: 0,
-            }}
-          >
-            {post.frontmatter.title}
-          </h1>
-          <h2>GOSH</h2>
-          <p
-            style={{
-              display: `block`,
-            }}
-          >
-            {post.frontmatter.date}
-          </p>
+          <Img
+            fluid={post.frontmatter.featuredimage.childImageSharp.fluid}
+            alt="cool stuff."
+            style={{ width: 640 }}
+          />
+          <h1 className="font-weight-bold">{post.frontmatter.title}</h1>
+          <p>{post.frontmatter.date}</p>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
-        <footer>
-          <Bio />
-        </footer>
+        <section className="blog-post-inner" dangerouslySetInnerHTML={{ __html: post.html }} />
       </article>
 
       <nav>
@@ -88,6 +77,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        featuredimage {
+          childImageSharp {
+            fluid(maxWidth: 640) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

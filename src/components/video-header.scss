@@ -1,46 +1,42 @@
-// html,
-// body {
-//   height: 100%;
-// }
-
 .video-header {
+  $element-height: 100vh;
+
   z-index: -20px;
   position: relative;
-}
+  height: $element-height;
 
-video {
-  z-index: -10;
-  object-fit: cover;
-  width: 100vw;
-  height: 84vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
+  video {
+    z-index: -10;
+    object-fit: cover;
+    width: 100vw;
+    height: $element-height;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
 
-.viewport-header {
-  position: relative;
-  height: 84vh;
-  top: 50%;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  text-align: center;
-  display: flex;
-  // flex-direction: column;
-  align-items: center;
-}
+  .viewport-header {
+    position: relative;
+    height: $element-height;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
 
-.underline-wavy {
-  text-decoration: #fae342 wavy underline;
-}
+  .underline-wavy {
+    text-decoration: #fae342 wavy underline;
+  }
 
-.text-shadow-header {
-  text-shadow: 2px 2px 8px pink;
-}
+  .text-shadow-header {
+    text-shadow: 2px 2px 8px pink;
+  }
 
-// .logo {
-//   width: 5rem;
-//   @include respond-above(sm) {
-//     width: 6.5rem;
-//   }
-// }
+  // .logo {
+  //   width: 5rem;
+  //   @include respond-above(sm) {
+  //     width: 6.5rem;
+  //   }
+  // }
+}
